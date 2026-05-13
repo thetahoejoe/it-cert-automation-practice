@@ -1,0 +1,66 @@
+{
+  "expo": {
+    "name": "Travelog",
+    "slug": "travelog",
+    "version": "1.0.0",
+    "scheme": "travelog",
+    "orientation": "default",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1B4332"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.travelog.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Travelog uses your location to tag your travel entries.",
+        "NSLocationAlwaysUsageDescription": "Travelog uses your location to tag your travel entries.",
+        "NSPhotoLibraryUsageDescription": "Travelog needs access to your photo library to attach photos to your travel entries.",
+        "NSCameraUsageDescription": "Travelog needs camera access to take photos for your travel entries."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1B4332"
+      },
+      "package": "com.travelog.app",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "CAMERA"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-location",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Travelog needs access to your photos to attach them to travel entries.",
+          "cameraPermission": "Travelog needs camera access to take photos for your travel entries."
+        }
+      ],
+      [
+        "expo-secure-store",
+        {
+          "faceIDPermission": "Allow Travelog to access your Face ID biometric data."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
